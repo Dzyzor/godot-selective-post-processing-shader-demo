@@ -47,14 +47,14 @@ The post_processor.gdshader file can be extended for a variety of different post
 - Select the PostProcessor node and open *Mesh->Material->Shader Parameters*.
 - Set *Debug View* to true to display the material ID numbers for each fragment in-editor and in-game to allow for easier debugging.
 
-<img src="media/screenshot_2.gif">
-
 **Note:** While the PostProcessor node is visible, you will be unable to select other nodes from the 3D editor view. There are 3 ways to address this:
 - You can hide the node when you want to select objects in the 3D view and unhide to display effects again.
 - You can enable *Show list of selectable nodes at position clicked* button above the 3D view.
 - If using 4.4+, you should be able to lock the PostProcessor node to select other nodes and still view effects after this commit: (https://github.com/godotengine/godot/issues/84764)
 
 **Note:** The PostProcessor node script will default to rendering to its parent node if it is a Camera3D, but you can reassign the *target_camera* exported property if it gets moved or was instantiated under a different node.
+
+<img src="media/screenshot_2.gif">
 
 **Warning:** Materials that are improperly configured will lead to the awkward visual effects demonstrated in the demo:
 - The blue sphere in the center is only visible on the primary layer and has no material overlay shader. It receives the post-processing effects meant for the geometry behind it.
