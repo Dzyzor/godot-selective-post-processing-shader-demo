@@ -54,7 +54,7 @@ The post_processor.gdshader file can be extended for a variety of different post
 
 **Note:** The PostProcessor node script will default to rendering to its parent node if it is a Camera3D, but you can reassign the *target_camera* exported property if it gets moved or was instantiated under a different node.
 
-<img src="media/screenshot_2.gif">
+<img src="media/screenshot_3.png">
 
 **Warning:** Materials that are improperly configured will lead to the awkward visual effects demonstrated in the demo:
 - The blue sphere in the center is only visible on the primary layer and has no material overlay shader. It receives the post-processing effects meant for the geometry behind it.
