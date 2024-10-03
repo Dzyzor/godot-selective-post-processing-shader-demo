@@ -9,6 +9,8 @@ This technique is based on the material ID masking from (https://github.com/dani
 
 The post_processor.gdshader file can be extended for a variety of different post-processing effects. The demo only applies custom effects to material IDs 4 and 5.
 
+<img src="media/screenshot_1.png">
+
 ## HOW TO USE:
 
 **Step 1:** Create the "post_processor.tscn" scene we will use for applying effects (You can skip this step if you download the scene from the demo):
@@ -44,6 +46,8 @@ The post_processor.gdshader file can be extended for a variety of different post
 - Instantiate a child scene under your primary camera using the "post_processor.tscn" node.
 - Select the PostProcessor node and open *Mesh->Material->Shader Parameters*.
 - Set *Debug View* to true to display the material ID numbers for each fragment in-editor and in-game to allow for easier debugging.
+
+<img src="media/screenshot_2.gif">
 
 **Note:** While the PostProcessor node is visible, you will be unable to select other nodes from the 3D editor view. There are 3 ways to address this:
 - You can hide the node when you want to select objects in the 3D view and unhide to display effects again.
