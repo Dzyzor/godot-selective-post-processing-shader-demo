@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://do16xgs2u7kss"]
+
+[ext_resource type="Shader" path="res://shaders/post_processor.gdshader" id="1_ky26h"]
+[ext_resource type="Script" path="res://post_processor/post_processor.gd" id="1_r4h0r"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_d067r"]
+viewport_path = NodePath("MaskViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_828f7"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_ky26h")
+shader_parameter/debug_view = false
+shader_parameter/mask_texture = SubResource("ViewportTexture_d067r")
+
+[sub_resource type="QuadMesh" id="QuadMesh_vdv6t"]
+resource_local_to_scene = true
+material = SubResource("ShaderMaterial_828f7")
+flip_faces = true
+size = Vector2(2, 2)
+
+[sub_resource type="Environment" id="Environment_fbi25"]
+background_mode = 1
+
+[node name="PostProcessor" type="MeshInstance3D"]
+process_priority = 1
+extra_cull_margin = 16384.0
+mesh = SubResource("QuadMesh_vdv6t")
+script = ExtResource("1_r4h0r")
+
+[node name="MaskViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+size = Vector2i(2205, 1190)
+
+[node name="MaskCamera" type="Camera3D" parent="MaskViewport"]
+transform = Transform3D(-0.687252, -0.572074, 0.447679, 0, 0.616282, 0.787526, -0.726419, 0.541229, -0.423541, 10.2295, 18.7383, -11.3598)
+cull_mask = 2
+environment = SubResource("Environment_fbi25")
+fov = 70.01

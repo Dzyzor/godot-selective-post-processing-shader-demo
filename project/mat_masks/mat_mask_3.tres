@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://m3fuva8pnidg"]
+
+[ext_resource type="Shader" path="res://shaders/mask_mat.gdshader" id="1_wpjvk"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wpjvk")
+shader_parameter/material_id = 3

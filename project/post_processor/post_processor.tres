@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://davwyqgklt3q4"]
+
+[ext_resource type="Shader" path="res://shaders/post_processor.gdshader" id="1_ntytb"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ubcjf"]
+viewport_path = NodePath("MaskViewport")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ntytb")
+shader_parameter/debug_view = false
+shader_parameter/mask_texture = SubResource("ViewportTexture_ubcjf")
